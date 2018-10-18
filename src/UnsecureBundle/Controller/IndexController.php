@@ -44,6 +44,7 @@ class IndexController extends Controller
 
                     $em->persist($subject);
                     $em->flush();
+
                     return $this->redirect($this->generateUrl('unsecure_homepage'));
                 }
             }

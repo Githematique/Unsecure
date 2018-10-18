@@ -52,7 +52,7 @@ class SubjectRepository extends EntityRepository
     public function findFullOne($subjectId)
     {
         $sql = 'SELECT s0_.text AS text, s0_.creationDate AS creationDate, s0_.private AS private, u1_.firstName AS firstName, u1_.lastName AS lastName, s0_.user AS user, c2_.userId AS userId24, c2_.subjectId AS subjectId25 FROM subject s0_ INNER JOIN user u1_ ON s0_.user = u1_.id LEFT JOIN comment c2_ ON s0_.id = c2_.subjectId LEFT JOIN user u3_ ON c2_.userId = u3_.id WHERE s0_.id = '.$subjectId.' ORDER BY c2_.creationDate DESC';
-        
+
         try {
             return $this->_em->getConnection()->fetchAll($sql)[0];
         } catch (\Exception $e) {
