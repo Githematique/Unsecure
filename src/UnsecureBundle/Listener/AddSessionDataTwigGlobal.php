@@ -16,7 +16,7 @@ class AddSessionDataTwigGlobal
      * @var Twig_Environment
      */
     private $twig;
-    
+
     /**
      * @param SessionService   $sessionService
      * @param Twig_Environment $twig

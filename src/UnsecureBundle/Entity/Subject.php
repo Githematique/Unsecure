@@ -29,7 +29,7 @@ class Subject
      */
     private $user;
 
-    /** 
+    /**
      * @var Comments[]
      *
      * @ORM\OneToMany(targetEntity="UnsecureBundle\Entity\Comment", mappedBy="subject")
@@ -68,7 +68,7 @@ class Subject
     /**
      * Get id.
      *
-     * @return int 
+     * @return int
      */
     public function getId()
     {
@@ -140,7 +140,7 @@ class Subject
     /**
      * Get user.
      *
-     * @return User 
+     * @return User
      */
     public function getUser()
     {

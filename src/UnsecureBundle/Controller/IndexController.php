@@ -11,7 +11,6 @@ use UnsecureBundle\Form\Type\CommentType;
 
 class IndexController extends Controller
 {
-
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
@@ -34,7 +33,7 @@ class IndexController extends Controller
             $subjectForm->handleRequest($request);
 
             if ($subjectForm->isSubmitted()) {
-                if ($subjectForm->isValid()) {     
+                if ($subjectForm->isValid()) {
                     $subject = new Subject();
                     $subject->setText($subjectForm->getData()['text']);
                     $subject->setUser($user);
@@ -44,7 +43,7 @@ class IndexController extends Controller
                     $em = $this->getDoctrine()->getManager();
 
                     $em->persist($subject);
-                    $em->flush();                    
+                    $em->flush();
                     return $this->redirect($this->generateUrl('unsecure_homepage'));
                 }
             }
@@ -63,7 +62,7 @@ class IndexController extends Controller
     /**
      * @param Request $request
      * @param int     $subjectId
-     * 
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function subjectAction(Request $request, $subjectId)
@@ -75,7 +74,7 @@ class IndexController extends Controller
         if (null === $subject) {
             throw $this->createNotFoundException();
         }
-        
+
         $comment = new Comment();
         $commentForm = $this->createForm(new CommentType(), $comment);
 
@@ -92,7 +91,6 @@ class IndexController extends Controller
 
             return $this->redirect($request->getUri());
         }
-
 
         return $this->render('UnsecureBundle:Index:subject.html.twig', array(
             'subject' => $subject,

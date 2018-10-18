@@ -13,7 +13,7 @@ use Doctrine\ORM\EntityRepository;
 class CommentRepository extends EntityRepository
 {
     /**
-     * Retrieve all comments for a subject
+     * Retrieve all comments for a subject.
      *
      * @param int $subjectId
      *

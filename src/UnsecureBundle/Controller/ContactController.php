@@ -8,7 +8,6 @@ use UnsecureBundle\Form\Type\ContactType;
 
 class ContactController extends Controller
 {
-
     public function indexAction(Request $request)
     {
         $contactForm = $this->createForm(new ContactType());
@@ -35,5 +34,4 @@ class ContactController extends Controller
                     'contactForm' => $contactForm->createView(),
         ));
     }
-
 }

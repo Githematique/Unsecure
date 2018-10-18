@@ -41,7 +41,7 @@ class Session
     /**
      * Get id.
      *
-     * @return int 
+     * @return int
      */
     public function getId()
     {

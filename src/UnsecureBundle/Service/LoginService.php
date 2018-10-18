@@ -11,7 +11,7 @@ class LoginService
      * @var UserRepository
      */
     private $userRepository;
-    
+
     /**
      * @param UserRepository $userRepository
      */

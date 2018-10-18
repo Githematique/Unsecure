@@ -143,7 +143,7 @@ class SessionService
 
     /**
      * Create default session data.
-     * 
+     *
      * @return \stdClass
      */
     private static function createDefaultSessionData()

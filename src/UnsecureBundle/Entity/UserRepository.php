@@ -35,7 +35,7 @@ class UserRepository extends EntityRepository
 
     /**
      * Query to check user password.
-     * 
+     *
      * @param string $username
      * @param string $hashedPassword
      *
@@ -55,7 +55,7 @@ class UserRepository extends EntityRepository
 
         if (count($results) > 0) {
             $user = new User();
-            
+
             foreach ($results[0] as $key => $value) {
                 if ('creationDate' === $key) {
                     $user->setCreationDate(new \DateTime($value));

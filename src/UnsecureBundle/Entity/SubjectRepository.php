@@ -37,6 +37,7 @@ class SubjectRepository extends EntityRepository
         ->getQuery();
 
         $subjects = $query->getResult();
+
         return $subjects;
     }
 

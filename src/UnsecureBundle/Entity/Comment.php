@@ -46,7 +46,7 @@ class Comment
      * @ORM\Column(name="creationDate", type="datetime")
      */
     private $creationDate;
-    
+
     /**
      * Constructor.
      */

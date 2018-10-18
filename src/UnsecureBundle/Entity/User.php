@@ -20,7 +20,7 @@ class User
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    
+
     /**
      * @var Subject[]
      *
@@ -346,7 +346,7 @@ class User
     /**
      * Get admin.
      *
-     * @return bool 
+     * @return bool
      */
     public function getAdmin()
     {
