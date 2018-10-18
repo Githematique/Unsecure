@@ -6,6 +6,7 @@ matrix:
   allow_failures:
      - php: 7.0
 
+
 before_script:
 - wget https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer-v2
 - chmod a+x php-cs-fixer-v2
