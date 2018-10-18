@@ -8,7 +8,7 @@ class Login
      * @var string
      */
     private $login;
-    
+
     /**
      * @var string
      */
@@ -24,13 +24,13 @@ class Login
 
     /**
      * @param string $login
-     * 
+     *
      * @return self
      */
     public function setLogin($login)
     {
         $this->login = $login;
-        
+
         return $this;
     }
 
@@ -44,13 +44,13 @@ class Login
 
     /**
      * @param string $pwd
-     * 
+     *
      * @return self
      */
     public function setPwd($pwd)
     {
         $this->pwd = $pwd;
-        
+
         return $this;
     }
 }
