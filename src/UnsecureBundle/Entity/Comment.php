@@ -5,7 +5,7 @@ namespace UnsecureBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Comment
+ * Comment.
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="UnsecureBundle\Entity\CommentRepository")
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Comment
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -21,7 +21,7 @@ class Comment
      */
     private $id;
 
-    /** 
+    /**
      * @ORM\ManyToOne(targetEntity="UnsecureBundle\Entity\User", inversedBy="comments")
      * @ORM\JoinColumn(name="userId", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
@@ -46,19 +46,19 @@ class Comment
      * @ORM\Column(name="creationDate", type="datetime")
      */
     private $creationDate;
-    
+
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
         $this->creationDate = new \DateTime();
     }
-    
+
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -66,9 +66,10 @@ class Comment
     }
 
     /**
-     * Set userId
+     * Set userId.
      *
-     * @param integer $userId
+     * @param int $userId
+     *
      * @return Comment
      */
     public function setUserId($userId)
@@ -79,9 +80,9 @@ class Comment
     }
 
     /**
-     * Get userId
+     * Get userId.
      *
-     * @return integer 
+     * @return int
      */
     public function getUserId()
     {
@@ -89,9 +90,10 @@ class Comment
     }
 
     /**
-     * Set subjectId
+     * Set subjectId.
      *
-     * @param integer $subjectId
+     * @param int $subjectId
+     *
      * @return Comment
      */
     public function setSubjectId($subjectId)
@@ -102,9 +104,9 @@ class Comment
     }
 
     /**
-     * Get subjectId
+     * Get subjectId.
      *
-     * @return integer 
+     * @return int
      */
     public function getSubjectId()
     {
@@ -112,9 +114,10 @@ class Comment
     }
 
     /**
-     * Set text
+     * Set text.
      *
      * @param string $text
+     *
      * @return Comment
      */
     public function setText($text)
@@ -125,9 +128,9 @@ class Comment
     }
 
     /**
-     * Get text
+     * Get text.
      *
-     * @return string 
+     * @return string
      */
     public function getText()
     {
@@ -135,9 +138,10 @@ class Comment
     }
 
     /**
-     * Set creationDate
+     * Set creationDate.
      *
      * @param \DateTime $creationDate
+     *
      * @return Comment
      */
     public function setCreationDate($creationDate)
@@ -148,9 +152,9 @@ class Comment
     }
 
     /**
-     * Get creationDate
+     * Get creationDate.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreationDate()
     {
@@ -158,9 +162,10 @@ class Comment
     }
 
     /**
-     * Set user
+     * Set user.
      *
      * @param \UnsecureBundle\Entity\User $user
+     *
      * @return Comment
      */
     public function setUser(\UnsecureBundle\Entity\User $user)
@@ -171,9 +176,9 @@ class Comment
     }
 
     /**
-     * Get user
+     * Get user.
      *
-     * @return \UnsecureBundle\Entity\User 
+     * @return \UnsecureBundle\Entity\User
      */
     public function getUser()
     {
@@ -181,9 +186,10 @@ class Comment
     }
 
     /**
-     * Set subject
+     * Set subject.
      *
      * @param \UnsecureBundle\Entity\Subject $subject
+     *
      * @return Comment
      */
     public function setSubject(\UnsecureBundle\Entity\Subject $subject)
@@ -194,9 +200,9 @@ class Comment
     }
 
     /**
-     * Get subject
+     * Get subject.
      *
-     * @return \UnsecureBundle\Entity\Subject 
+     * @return \UnsecureBundle\Entity\Subject
      */
     public function getSubject()
     {

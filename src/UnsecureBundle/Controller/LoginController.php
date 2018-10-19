@@ -13,27 +13,26 @@ class LoginController extends Controller
     {
         $loginService = $this->get('unsecure.login');
         $sessionService = $this->get('unsecure.session');
-        
+
         // Redirect if already logged
         if (-1 !== $sessionService->getData()->userId) {
             return $this->redirect($this->generateUrl('unsecure_homepage'));
         }
-        
+
         $login = new Login();
         $loginForm = $this->createForm(new LoginType(), $login);
 
         $loginForm->handleRequest($request);
-        
+
         if ($loginForm->isValid()) {
-            
             $user = $loginService->login($login->getLogin(), $login->getPwd());
-            
+
             $sessionData = $sessionService->getData();
-            
+
             $sessionData->userId = $user->getId();
-            
+
             $sessionService->setData($sessionData);
-            
+
             return $this->redirect($this->generateUrl('unsecure_homepage'));
         }
 
@@ -41,18 +40,18 @@ class LoginController extends Controller
             'loginForm' => $loginForm->createView(),
         ));
     }
-    
+
     public function logoutAction()
     {
         $sessionService = $this->get('unsecure.session');
-        
+
         // Redirect if not logged
         if (-1 === $sessionService->getData()->userId) {
             return $this->redirect($this->generateUrl('unsecure_homepage'));
         }
-        
+
         $sessionService->logout();
-        
+
         return $this->redirect($this->generateUrl('unsecure_homepage'));
     }
 }

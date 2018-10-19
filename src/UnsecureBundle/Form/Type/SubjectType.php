@@ -1,4 +1,5 @@
 <?php
+
 namespace UnsecureBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
@@ -11,15 +12,15 @@ class SubjectType extends AbstractType
         $builder->add('text', 'textarea', array(
             'label' => false,
             'attr' => array(
-                'rows' => 15
+                'rows' => 15,
             ),
         ));
-        
+
         $builder->add('private', 'checkbox', array(
-            'label' => "проект",
-            'required' => false
+            'label' => 'проект',
+            'required' => false,
         ));
-        
+
         $builder->add('submit', 'submit', array(
             'label' => 'Сохранить статью',
             'attr' => array(
@@ -27,6 +28,7 @@ class SubjectType extends AbstractType
             ),
         ));
     }
+
     public function getName()
     {
         return 'unsecureBundle_subjecttype';

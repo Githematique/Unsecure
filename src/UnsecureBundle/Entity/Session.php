@@ -5,7 +5,7 @@ namespace UnsecureBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Session
+ * Session.
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="UnsecureBundle\Entity\SessionRepository")
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Session
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -22,8 +22,8 @@ class Session
     private $id;
 
     /**
-     * Session data encoded as json
-     * 
+     * Session data encoded as json.
+     *
      * @var string
      *
      * @ORM\Column(name="data", type="string", length=4095)
@@ -31,7 +31,7 @@ class Session
     private $data;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -39,9 +39,9 @@ class Session
     }
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -49,10 +49,10 @@ class Session
     }
 
     /**
-     * Set data
+     * Set data.
      *
      * @param string $data
-     * 
+     *
      * @return Session
      */
     public function setData($data)
@@ -63,9 +63,9 @@ class Session
     }
 
     /**
-     * Get data
+     * Get data.
      *
-     * @return string 
+     * @return string
      */
     public function getData()
     {
