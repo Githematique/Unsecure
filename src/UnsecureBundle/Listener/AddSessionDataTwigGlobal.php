@@ -11,14 +11,14 @@ class AddSessionDataTwigGlobal
      * @var SessionService
      */
     private $sessionService;
-    
+
     /**
      * @var Twig_Environment
      */
     private $twig;
-    
+
     /**
-     * @param SessionService $sessionService
+     * @param SessionService   $sessionService
      * @param Twig_Environment $twig
      */
     public function __construct(SessionService $sessionService, Twig_Environment $twig)
@@ -26,7 +26,7 @@ class AddSessionDataTwigGlobal
         $this->sessionService = $sessionService;
         $this->twig = $twig;
     }
-    
+
     public function onKernelController()
     {
         $this->twig->addGlobal('sessionUser', $this->sessionService->getUser());

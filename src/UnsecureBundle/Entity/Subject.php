@@ -5,7 +5,7 @@ namespace UnsecureBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Subject
+ * Subject.
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="UnsecureBundle\Entity\SubjectRepository")
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Subject
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -23,21 +23,21 @@ class Subject
 
     /**
      * @var User
-     * 
+     *
      * @ORM\ManyToOne(targetEntity="UnsecureBundle\Entity\User", inversedBy="subjects")
      * @ORM\JoinColumn(name="user", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     private $user;
 
-     /** 
+    /**
      * @var Comments[]
-     * 
+     *
      * @ORM\OneToMany(targetEntity="UnsecureBundle\Entity\Comment", mappedBy="subject")
      * @ORM\JoinColumn(name="userId", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      * @ORM\OrderBy({"creationDate" = "DESC"})
      */
     private $comments;
-    
+
     /**
      * @var string
      *
@@ -58,7 +58,7 @@ class Subject
      * @ORM\Column(name="private", type="boolean")
      */
     private $private;
-    
+
     public function __construct()
     {
         $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
@@ -66,9 +66,9 @@ class Subject
     }
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -76,9 +76,10 @@ class Subject
     }
 
     /**
-     * Set text
+     * Set text.
      *
      * @param string $text
+     *
      * @return Subject
      */
     public function setText($text)
@@ -89,9 +90,9 @@ class Subject
     }
 
     /**
-     * Get text
+     * Get text.
      *
-     * @return string 
+     * @return string
      */
     public function getText()
     {
@@ -99,9 +100,10 @@ class Subject
     }
 
     /**
-     * Set creationDate
+     * Set creationDate.
      *
      * @param \DateTime $creationDate
+     *
      * @return Subject
      */
     public function setCreationDate($creationDate)
@@ -112,9 +114,9 @@ class Subject
     }
 
     /**
-     * Get creationDate
+     * Get creationDate.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreationDate()
     {
@@ -122,9 +124,10 @@ class Subject
     }
 
     /**
-     * Set user
+     * Set user.
      *
      * @param User $user
+     *
      * @return Subject
      */
     public function setUser(User $user)
@@ -135,48 +138,48 @@ class Subject
     }
 
     /**
-     * Get user
+     * Get user.
      *
-     * @return User 
+     * @return User
      */
     public function getUser()
     {
         return $this->user;
     }
-    
+
     /**
-     * Set private
+     * Set private.
      *
-     * @param boolean $private
+     * @param bool $private
+     *
      * @return Subject
      */
     public function setPrivate($private)
     {
         $this->private = $private;
-    
+
         return $this;
     }
-    
+
     /**
-     * Get private
+     * Get private.
      *
-     * @return boolean
+     * @return bool
      */
     public function getPrivate()
     {
         return $this->private;
     }
-    
+
     /**
-     * Constructor
+     * Constructor.
      */
-    
-
 
     /**
-     * Add comments
+     * Add comments.
      *
      * @param \UnsecureBundle\Entity\Comment $comments
+     *
      * @return Subject
      */
     public function addComment(\UnsecureBundle\Entity\Comment $comments)
@@ -187,7 +190,7 @@ class Subject
     }
 
     /**
-     * Remove comments
+     * Remove comments.
      *
      * @param \UnsecureBundle\Entity\Comment $comments
      */
@@ -197,9 +200,9 @@ class Subject
     }
 
     /**
-     * Get comments
+     * Get comments.
      *
-     * @return Comments[] 
+     * @return Comments[]
      */
     public function getComments()
     {

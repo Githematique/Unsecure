@@ -5,7 +5,7 @@ namespace UnsecureBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * User
+ * User.
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="UnsecureBundle\Entity\UserRepository")
@@ -13,24 +13,24 @@ use Doctrine\ORM\Mapping as ORM;
 class User
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    
+
     /**
      * @var Subject[]
-     * 
+     *
      * @ORM\OneToMany(targetEntity="UnsecureBundle\Entity\Subject", mappedBy="user")
      */
     private $subjects;
-    
+
     /**
      * @var Comments[]
-     * 
+     *
      * @ORM\OneToMany(targetEntity="UnsecureBundle\Entity\Comment", mappedBy="user")
      */
     private $comments;
@@ -62,14 +62,14 @@ class User
      * @ORM\Column(name="email", type="string", length=255, nullable=true)
      */
     private $email;
-    
+
     /**
      * @var string
      *
      * @ORM\Column(name="password", type="string", nullable=true)
      */
     private $password;
-    
+
     /**
      * @var string
      *
@@ -83,9 +83,9 @@ class User
      * @ORM\Column(name="creationDate", type="datetime")
      */
     private $creationDate;
-    
+
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -96,9 +96,9 @@ class User
     }
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -106,21 +106,22 @@ class User
     }
 
     /**
-     * To make custom hydratation work
+     * To make custom hydratation work.
      *
-     * @return User 
+     * @return User
      */
     public function setId($id)
     {
         $this->id = $id;
-        
+
         return $this;
     }
 
     /**
-     * Set firstName
+     * Set firstName.
      *
      * @param string $firstName
+     *
      * @return User
      */
     public function setFirstName($firstName)
@@ -131,9 +132,9 @@ class User
     }
 
     /**
-     * Get firstName
+     * Get firstName.
      *
-     * @return string 
+     * @return string
      */
     public function getFirstName()
     {
@@ -141,9 +142,10 @@ class User
     }
 
     /**
-     * Set lastName
+     * Set lastName.
      *
      * @param string $lastName
+     *
      * @return User
      */
     public function setLastName($lastName)
@@ -154,9 +156,9 @@ class User
     }
 
     /**
-     * Get lastName
+     * Get lastName.
      *
-     * @return string 
+     * @return string
      */
     public function getLastName()
     {
@@ -164,9 +166,10 @@ class User
     }
 
     /**
-     * Set email
+     * Set email.
      *
      * @param string $email
+     *
      * @return User
      */
     public function setEmail($email)
@@ -177,9 +180,9 @@ class User
     }
 
     /**
-     * Get email
+     * Get email.
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -187,9 +190,10 @@ class User
     }
 
     /**
-     * Set creationDate
+     * Set creationDate.
      *
      * @param \DateTime $creationDate
+     *
      * @return User
      */
     public function setCreationDate($creationDate)
@@ -200,9 +204,9 @@ class User
     }
 
     /**
-     * Get creationDate
+     * Get creationDate.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreationDate()
     {
@@ -210,9 +214,10 @@ class User
     }
 
     /**
-     * Add subjects
+     * Add subjects.
      *
      * @param \UnsecureBundle\Entity\Subject $subjects
+     *
      * @return User
      */
     public function addSubject(\UnsecureBundle\Entity\Subject $subjects)
@@ -223,7 +228,7 @@ class User
     }
 
     /**
-     * Remove subjects
+     * Remove subjects.
      *
      * @param \UnsecureBundle\Entity\Subject $subjects
      */
@@ -233,7 +238,7 @@ class User
     }
 
     /**
-     * Get subjects
+     * Get subjects.
      *
      * @return Subject[]
      */
@@ -243,9 +248,10 @@ class User
     }
 
     /**
-     * Add comments
+     * Add comments.
      *
      * @param \UnsecureBundle\Entity\Comment $comments
+     *
      * @return User
      */
     public function addComment(\UnsecureBundle\Entity\Comment $comments)
@@ -256,7 +262,7 @@ class User
     }
 
     /**
-     * Remove comments
+     * Remove comments.
      *
      * @param \UnsecureBundle\Entity\Comment $comments
      */
@@ -266,9 +272,9 @@ class User
     }
 
     /**
-     * Get comments
+     * Get comments.
      *
-     * @return return Comments[] 
+     * @return return Comments[]
      */
     public function getComments()
     {
@@ -276,9 +282,10 @@ class User
     }
 
     /**
-     * Set pseudo
+     * Set pseudo.
      *
      * @param string $pseudo
+     *
      * @return User
      */
     public function setPseudo($pseudo)
@@ -289,19 +296,20 @@ class User
     }
 
     /**
-     * Get pseudo
+     * Get pseudo.
      *
-     * @return string 
+     * @return string
      */
     public function getPseudo()
     {
         return $this->pseudo;
     }
-    
+
     /**
-     * Set password
+     * Set password.
      *
      * @param string $password
+     *
      * @return User
      */
     public function setPassword($password)
@@ -312,9 +320,9 @@ class User
     }
 
     /**
-     * Get password
+     * Get password.
      *
-     * @return string 
+     * @return string
      */
     public function getPassword()
     {
@@ -322,9 +330,10 @@ class User
     }
 
     /**
-     * Set admin
+     * Set admin.
      *
-     * @param boolean $admin
+     * @param bool $admin
+     *
      * @return User
      */
     public function setAdmin($admin)
@@ -335,9 +344,9 @@ class User
     }
 
     /**
-     * Get admin
+     * Get admin.
      *
-     * @return boolean 
+     * @return bool
      */
     public function getAdmin()
     {
