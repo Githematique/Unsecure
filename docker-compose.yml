@@ -21,7 +21,7 @@ services:
             - db:mysqldb
             - redis
         volumes:
-            - /votre/chemin/projet/symfony:/var/www/symfony
+            - /your/symfony/project/path:/var/www/symfony
             - ./logs/symfony:/var/www/symfony/app/logs
     nginx:
         build: nginx
